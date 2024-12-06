@@ -218,6 +218,8 @@ const Startgame = () => {
         gameroundset.innerText = 0
         
          gamemsg.style.display = "none"
+
+          msg.innerText = "Let's Play"
         
     })
 
