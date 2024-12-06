@@ -219,7 +219,7 @@ const Startgame = () => {
         
          gamemsg.style.display = "none"
 
-          msg.innerText = "Let's Play"
+         msg.innerText = "Let's Play"
         
     })
 
