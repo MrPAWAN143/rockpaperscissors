@@ -1,123 +1,213 @@
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
-
-html,
 body {
-    margin: 0;
+    background: linear-gradient(135deg, #1d4350, #a43931);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
 }
 
 .container {
+    max-width: 500px;
     width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    background: #2b2b3d;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow: hidden;
 }
 
-.how-round{
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
+/* Game Message */
+.gamemsg {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f3a953;
 }
-.how-round input{
-    width: 150px;
-    height: 35px;
+
+/* Game Round Input */
+.how-round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.how-round input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
     border: none;
     outline: none;
-    border: 1px solid rgb(0, 225, 255);
-    padding: 2px 0px 2px 10px;
-    border-radius: 5px;
+    background: #3b3b55;
+    color: #fff;
 }
 
-.drow{
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-
-
-.how-round .submit-btn{
-    background-color: #00A172;
-    color: white;
-    padding: 7px 25px;
-    margin-left: 10px;
+.how-round .submit-btn {
+    background: #f3a953;
+    color: #fff;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.gamemsg{
-    display: none;
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   background-color: red;
-   padding: 6px 10px;
-   border-radius: 4px;
-   transform: translateX(-50%);
-   width: 250px;
-   min-height: 100px;
-    color: white;
-    word-wrap: break-word;
-
- 
- 
- }
-.max-round{
-    margin-top: 20px;
+.how-round .submit-btn:hover {
+    background: #d6883d;
 }
 
-.game {
-    width: 420px;
-    height: auto;
-    margin: auto;
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.game div img {
-    width: 120px;
-    height: 120px;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: rgb(146, 159, 170);
-    cursor: pointer;
-
-}
-
-.game div img:hover{
-    outline: 6px solid rgb(76, 137, 48);
-    
+/* Game Stats */
+.max-round, .drow, .gane-points, .played {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: #f3a953;
 }
 
 .gane-points{
-    width: 300px;
-    margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-
+    justify-content: center;
+    gap: 30px;
+}
+/* Game Elements */
+.game {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 20px;
 }
 
-.played{
-    margin-top: 40px;
-    background-color: rgb(110, 110, 34);
-    padding: 10px 50px;
+.game div {
+    width: 30%;
+    background: #3b3b55;
     border-radius: 10px;
-    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.msg{
-    padding: 10px 20px;
-    background-color: rgb(146, 159, 170);
+.game div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(243, 169, 83, 0.8);
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+}
+
+/* Game Result */
+.game-result {
+    background: #3b3b55;
     border-radius: 10px;
-    margin-top: 40px;
-    color: rgb(5, 37, 124);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.game-result h2 {
+    font-size: 1.5rem;
+    color: #f3a953;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .how-round input {
+        width: 100%;
+    }
+
+    .game {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game div {
+        width: 100%;
+    }
+
+    .max-round, .drow, .gane-points, .played {
+        font-size: 1rem;
+    }
+}
+
+
+.game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.choice {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    margin-bottom: 8px;
+}
+
+.choice p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #a0a0a0;
+}
+
+/* General Styling */
+.drow, .gane-points, .played {
+    text-align: center;
+    margin: 15px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Draw Match */
+.drow h2 {
+    color: #f1c40f; /* Gold for draw to indicate neutrality */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.drow-match {
+    color: #f39c12; /* Slightly darker gold for contrast */
+}
+
+/* Game Points */
+.gane-points h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.comp-point {
+    color: #e74c3c; /* Red for the computer to indicate challenge */
+}
+
+.user-point {
+    color: #2ecc71; /* Green for the user to indicate success */
+}
+
+/* Played Rounds */
+.played h2 {
+    color: #3498db; /* Blue to show progress dynamically */
+    font-size: 1.4rem;
+}
+
+.played-round {
+    color: #2980b9; /* Slightly darker blue for contrast */
 }
 
 

@@ -47,22 +47,16 @@ const getuserround = () => {
     }
 }
 
-const popupshow = (msg, bgclor ,txtclor, time) => {
+const popupshow = (msg, bgclor, txtclor) => {
     gamemsg.style.display = "block"
     gamemsg.innerText = msg
     gamemsg.style.backgroundColor = bgclor
     gamemsg.style.color = txtclor
-
-
-    
-
-
-
     setTimeout(() => {
         gamemsg.style.display = "none"
         userselectround.value = ""
 
-        
+
     }, 5000)
 }
 
@@ -71,9 +65,9 @@ const setgameroundvalue = () => {
     gameroundset.style.color = "green"
     gameroundset.style.fontSize = "30px"
     gameroundset.style.fontWeight = "800";
-    inputdiv.style.visibility = "hidden";
+    inputdiv.style.display = "none";
 
-    popupshow(`Congratulations! You have (${gameround}) rounds to play."` , "green" , "white" , 2000)
+    popupshow(`Congratulations! You have (${gameround}) rounds to play."`, "green", "white", 2000)
 
 }
 
@@ -88,26 +82,23 @@ gamediv.forEach((item) => {
 })
 
 const gamedrow = (userchoice, compval) => {
-
-    drowmatch++
-    drowpoint.innerText = drowmatch
-    msg.innerText = `Game Drow (${userchoice}) = (${compval}) `
-}
+    drowmatch++;
+    drowpoint.innerText = drowmatch;
+    msg.innerText = `It's a draw! Both chose (${userchoice}).`;
+};
 
 const winfunction = (userwin, userchoice, compval) => {
-
     if (userwin) {
-        userscore++
-        userpoint.innerText = userscore
-        msg.innerText = `You Win!  (${userchoice}) Beats (${compval}) `
+        userscore++;
+        userpoint.innerText = userscore;
+        msg.innerText = `You win! (${userchoice}) beats (${compval}).`;
     } else {
-        compscore++
-        compoints.innerText = compscore
-        msg.innerText = `You Loss!  (${compval}) Beats (${userchoice}) `
+        compscore++;
+        compoints.innerText = compscore;
+        msg.innerText = `You lose! (${compval}) beats (${userchoice}).`;
     }
+};
 
-
-}
 
 
 const playgame = (userchoice) => {
@@ -151,7 +142,7 @@ const playgame = (userchoice) => {
 
 
 
-            popupshow("This is your final chance! You have one last move to make it count!" , "red" , "white" )
+            popupshow("This is your final chance! You have one last move to make it count!", "red", "white")
 
             if (gameround === 0) {
                 celebrite()
@@ -164,7 +155,7 @@ const playgame = (userchoice) => {
 
 
     } else {
-        popupshow("You don’t have any rounds left to play. Please check back later!", "red" , "white" )
+        popupshow("You don’t have any rounds left to play. Please check back later!", "red", "white")
 
     }
 
@@ -175,19 +166,19 @@ const celebrite = () => {
     if (userscore > compscore) {
 
 
-        popupshow("Congratulations! You've successfully won this game. Your strategy and skills were impressive—well done!" , "green" , "white" )
-      
+        popupshow("Congratulations! You've successfully won this game. Your strategy and skills were impressive—well done!", "green", "white")
+
 
 
     } else if (userscore === compscore) {
-     
-        popupshow("It's a draw! Both sides played well, but this match ends in a tie. Great effort from everyone!", "yellow" , "white" )
 
-     
+        popupshow("It's a draw! Both sides played well, but this match ends in a tie. Great effort from everyone!", "yellow", "black")
+
+
     } else {
 
-        
-        popupshow("Oops! We're sorry to say that you've lost this game. Better luck next time—don't give up!", "red" , "white" )
+
+        popupshow("Oops! We're sorry to say that you've lost this game. Better luck next time—don't give up!", "red", "white")
 
     }
 
@@ -200,27 +191,28 @@ const celebrite = () => {
 const Startgame = () => {
     msg.innerText = "Start Again"
     msg.classList.add('start')
-    
+
     userscore = 0;
     compscore = 0;
     drowmatch = 0
     gameround = 0;
     plyedround = 0;
 
-   
+
     let startgame = document.querySelector('.start')
     startgame.addEventListener('click', () => {
-        inputdiv.style.visibility = "visible";
+        inputdiv.style.display = "flex";
         compoints.innerText = 0
         drowpoint.innerText = 0
         userpoint.innerText = 0
         plyedroundmsg.innerText = 0
         gameroundset.innerText = 0
-        
-         gamemsg.style.display = "none"
 
-         msg.innerText = "Let's Play"
+        gamemsg.style.display = "none"
+
+        msg.innerText = "Let's Play"
         
+
     })
 
 
