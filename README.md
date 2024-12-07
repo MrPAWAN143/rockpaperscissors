@@ -22,6 +22,9 @@ A simple, interactive **Rock-Paper-Scissors** game built with HTML, CSS, and Jav
    - **Scissors beats Paper**
 5. Enjoy the game and may the odds be in your favor!
 
+🎮 **Play the game online here:** [Rock-Paper-Scissors](https://rockpaperscissors-lilac-three.vercel.app/)
+
+
 ## 💻 Technologies Used
 - **HTML5** for the structure.
 - **CSS3** for styling and responsiveness.
