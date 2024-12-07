@@ -28,7 +28,7 @@ A simple, interactive **Rock-Paper-Scissors** game built with HTML, CSS, and Jav
 - **JavaScript** for game logic and interactivity.
 
 ## 📷 Screenshots
-![Rock-Paper-Scissors Game](Screenshot 2024-12-07 at 2.26.12 PM.png)
-![Rock-Paper-Scissors Game](Screenshot 2024-12-07 at 2.26.31 PM.png)
+![Rock-Paper-Scissors Desktop Version](screenshort1.png)
+![Rock-Paper-Scissors Mobile Version](screenshort2.png)
 
 ## 📂 Folder Structure
